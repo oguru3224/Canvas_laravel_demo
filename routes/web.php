@@ -11,6 +11,10 @@ Route::get('/', function () {
 Route::post('/lti/login', [CanvasAuthController::class, 'redirectToCanvas']);
 Route::post('/lti/launch', [CanvasAuthController::class, 'handleLtiCallback'])->name('canvas.login.redirect');
 
+Route::get('/lti/login', function () {
+    return view('auth.canvas-login');
+})->name('canvas.login');
+
 
 Route::get('/lti/launch', function () {
     return redirect()->route('canvas.login');
