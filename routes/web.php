@@ -16,6 +16,8 @@ Route::get('/lti/login', function () {
 })->name('canvas.login');
 
 
+
+
 Route::get('/lti/launch', function () {
     return redirect()->route('canvas.login');
 });
